@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: #fff;
+}
+
+.Container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #26c6da, #66bb6a, #ef5350, #ab47bc, #ffeb3b, #00e676, #ff5722);
+    background-size: 800% 800%;
+    animation: animateColors 10s ease infinite;
+}
+
+@keyframes animateColors {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.Login-Box {
+    position: relative;
+    width: 400px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.Login-Box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.User-Box {
+    position: relative;
+}
+
+.User-Box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.User-Box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.User-Box input:focus~label,
+.User-Box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+}
+
+button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+}
+
+button span {
+    position: absolute;
+    display: block;
+}
+
+#error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
