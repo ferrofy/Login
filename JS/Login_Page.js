@@ -17,11 +17,7 @@ const songs = [
 let audio = new Audio();
 audio.volume = 0.5; // Set volume to 50%
 audio.src = songs[0]; // Play "Play Date" first
-
-window.onload = function() {
-    audio.play(); // Play song automatically on page load
-    document.getElementById('playPauseBtn').textContent = '⏸️'; // Initially display pause button
-};
+audio.play(); // Play song automatically on page load
 
 audio.onerror = function() {
     showPopup('#errorPopup');
