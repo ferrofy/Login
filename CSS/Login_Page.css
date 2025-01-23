@@ -9,7 +9,6 @@ body {
     overflow: hidden;
     color: #fff;
 }
- 
 .Container {
     position: relative;
     width: 100%;
@@ -21,21 +20,17 @@ body {
     background-size: 800% 800%;
     animation: animateColors 10s ease infinite;
 }
-
 @keyframes animateColors {
     0% {
         background-position: 0% 50%;
     }
-
     50% {
         background-position: 100% 50%;
     }
-
     100% {
         background-position: 0% 50%;
     }
 }
-
 .Login-Box {
     position: relative;
     width: 400px;
@@ -44,18 +39,15 @@ body {
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }
-
 .Login-Box h2 {
     margin: 0 0 30px;
     padding: 0;
     color: #fff;
     text-align: center;
 }
-
 .User-Box {
     position: relative;
 }
-
 .User-Box input {
     width: 100%;
     padding: 10px 0;
@@ -67,7 +59,6 @@ body {
     outline: none;
     background: transparent;
 }
-
 .User-Box label {
     position: absolute;
     top: 0;
@@ -78,7 +69,6 @@ body {
     pointer-events: none;
     transition: 0.5s;
 }
-
 .User-Box input:focus~label,
 .User-Box input:valid~label {
     top: -20px;
@@ -86,7 +76,6 @@ body {
     color: #03e9f4;
     font-size: 12px;
 }
-
 button {
     position: relative;
     display: inline-block;
@@ -102,25 +91,18 @@ button {
     border: none;
     cursor: pointer;
 }
-
 button:hover {
     background: #03e9f4;
     color: #fff;
     border-radius: 5px;
     box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
 }
-
 button span {
     position: absolute;
     display: block;
 }
-
 #error-message {
     color: red;
     text-align: center;
     margin-top: 10px;
-}
-
-.hidden {
-    display: none;
 }
