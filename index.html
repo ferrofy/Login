@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FerroFy - Login</title>
+    <link rel="icon" href="IMG/Favicon.png" type="image/png">
+    <link rel="stylesheet" href="CSS/Structure.css">
+    <link rel="stylesheet" href="CSS/Login.css">
+</head>
+
+<body>
+    <div class="Container">
+        <div class="Login-Box">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="User-Box">
+                    <input type="text" id="username" required="">
+                    <label>Username</label>
+                </div>
+                <button type="button" onclick="validateUser()">Submit</button>
+                <p id="error-message"></p>
+            </form>
+        </div>
+    </div>
+    <script src="JS/Btn.js"></script>
+    <script src="JS/Login.js"></script>
+</body>
+
+</html>
