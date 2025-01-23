@@ -14,13 +14,14 @@ const songs = [
     'Songs/All_The_Stars.mp3'
 ];
 
-function getRandomSongIndex() {
-    return Math.floor(Math.random() * songs.length);
-}
-
-let currentSongIndex = getRandomSongIndex();
-let audio = new Audio(songs[currentSongIndex]);
+let audio = new Audio();
 audio.volume = 0.5; // Set volume to 50%
+audio.src = songs[0]; // Play "Play Date" first
+
+window.onload = function() {
+    audio.play(); // Play song automatically on page load
+    document.getElementById('playPauseBtn').textContent = '⏸️'; // Initially display pause button
+};
 
 audio.onerror = function() {
     showPopup('#errorPopup');
@@ -30,7 +31,15 @@ audio.onended = function() {
     nextSong();
 };
 
-audio.play(); // Play song automatically on page load
+function getRandomSongIndex(excludeIndex) {
+    let randomIndex;
+    do {
+        randomIndex = Math.floor(Math.random() * songs.length);
+    } while (randomIndex === excludeIndex);
+    return randomIndex;
+}
+
+let currentSongIndex = 0;
 
 function playPauseMusic() {
     if (audio.paused) {
@@ -44,16 +53,18 @@ function playPauseMusic() {
 }
 
 function nextSong() {
-    currentSongIndex = getRandomSongIndex();
-    audio.src = songs[currentSongIndex];
+    const newSongIndex = getRandomSongIndex(currentSongIndex);
+    currentSongIndex = newSongIndex;
+    audio.src = songs[newSongIndex];
     audio.play();
     document.getElementById('playPauseBtn').textContent = '⏸️';
     showSongPopup();
 }
 
 function prevSong() {
-    currentSongIndex = getRandomSongIndex();
-    audio.src = songs[currentSongIndex];
+    const newSongIndex = getRandomSongIndex(currentSongIndex);
+    currentSongIndex = newSongIndex;
+    audio.src = songs[newSongIndex];
     audio.play();
     document.getElementById('playPauseBtn').textContent = '⏸️';
     showSongPopup();
