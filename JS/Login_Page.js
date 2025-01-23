@@ -5,7 +5,7 @@ function validateUser() {
     if (validUsernames.includes(usernameInput) || usernameInput === 'GUEST') {
         window.location.href = `https://ferrofy.github.io/Login/User/${usernameInput}`;
     } else {
-        document.getElementById('error-message').textContent = 'User Name Not Found. If You Are Guest Then Type User Name as - Guest';
+        document.getElementById('error-message').textContent = 'Guest, This User Name Is Incorrect. If You Are Guest Then Type User Name "Guest"';
     }
 }
 
@@ -14,37 +14,48 @@ const songs = [
     'Songs/All_The_Stars.mp3'
 ];
 
-let currentSongIndex = 0;
+function getRandomSongIndex() {
+    return Math.floor(Math.random() * songs.length);
+}
+
+let currentSongIndex = getRandomSongIndex();
 let audio = new Audio(songs[currentSongIndex]);
+audio.volume = 0.5; // Set volume to 50%
 
 audio.onerror = function() {
     showPopup('#errorPopup');
 };
 
+audio.onended = function() {
+    nextSong();
+};
+
+audio.play(); // Play song automatically on page load
+
 function playPauseMusic() {
     if (audio.paused) {
         audio.play();
-        document.getElementById('playPauseBtn').textContent = '⏸️ Stop';
+        document.getElementById('playPauseBtn').textContent = '⏸️'; // Only emoji for pause
         showSongPopup();
     } else {
         audio.pause();
-        document.getElementById('playPauseBtn').textContent = '▶️ Play';
+        document.getElementById('playPauseBtn').textContent = '▶️'; // Only emoji for play
     }
 }
 
 function nextSong() {
-    currentSongIndex = (currentSongIndex + 1) % songs.length;
+    currentSongIndex = getRandomSongIndex();
     audio.src = songs[currentSongIndex];
     audio.play();
-    document.getElementById('playPauseBtn').textContent = '⏸️ Stop';
+    document.getElementById('playPauseBtn').textContent = '⏸️';
     showSongPopup();
 }
 
 function prevSong() {
-    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+    currentSongIndex = getRandomSongIndex();
     audio.src = songs[currentSongIndex];
     audio.play();
-    document.getElementById('playPauseBtn').textContent = '⏸️ Stop';
+    document.getElementById('playPauseBtn').textContent = '⏸️';
     showSongPopup();
 }
 
