@@ -5,15 +5,13 @@ function validateUser() {
     if (validUsernames.includes(usernameInput) || usernameInput === 'GUEST') {
         window.location.href = `https://ferrofy.github.io/Login/User/${usernameInput}`;
     } else {
-        document.getElementById('error-message').textContent = 'Guest, This User Name Is Incorrect. If You Are Guest Then Type User Name "Guest"';
+        document.getElementById('error-message').textContent = 'User Name Not Found. If You Are Guest Then Type User Name as - Guest';
     }
 }
 
 const songs = [
     'Songs/Play_Date.mp3',
-    'Songs/All_The_Stars.mp3',
-    'Songs/3.mp3',
-    'Songs/4.mp3'
+    'Songs/All_The_Stars.mp3'
 ];
 
 let currentSongIndex = 0;
