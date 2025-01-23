@@ -8,12 +8,3 @@ function validateUser() {
         document.getElementById('error-message').textContent = 'Guest, This User Name Is Incorrect. If You Are Guest Then Type User Name "Guest"';
     }
 }
-
-function showPopup(popupId) {
-    document.querySelector(popupId).classList.remove('hidden');
-}
-
-function closePopup() {
-    document.querySelector('#errorPopup').classList.add('hidden');
-    document.querySelector('#songPopup').classList.add('hidden');
-}
