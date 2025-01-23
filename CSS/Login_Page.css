@@ -115,8 +115,47 @@ button span {
     display: block;
 }
 
+.Music-Controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.Top-Buttons button,
+.Volume-Buttons button {
+    background-color: #39ff14; /* Neon light green */
+    border-radius: 5px;
+    color: black;
+    margin: 5px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.Top-Buttons button:hover,
+.Volume-Buttons button:hover {
+    background-color: orange;
+    box-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 20px orange;
+}
+
 #error-message {
     color: red;
     text-align: center;
     margin-top: 10px;
+}
+
+#errorPopup,
+#songPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.hidden {
+    display: none;
 }
